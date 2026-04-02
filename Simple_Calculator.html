@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.calculator {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 260px;
+}
+
+h2 {
+  color: white;
+}
+
+#display {
+  width: 90%;
+  height: 50px;
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 8px;
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.operator { background: orange; }
+.equal { background: green; grid-column: span 2; }
+.clear { background: red; color: white; }
+
+/* History */
+.history {
+  width: 200px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  padding: 10px;
+  color: white;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.history h3 {
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="calculator">
+    <h2>Calculator</h2>
+
+    <input type="text" id="display" disabled>
+
+    <div class="buttons">
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button onclick="del()">⌫</button>
+      <button class="operator" onclick="append('/')">/</button>
+      <button class="operator" onclick="append('*')">*</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('-')">-</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button onclick="append('.')">.</button>
+
+      <button onclick="append('0')">0</button>
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <div class="history" id="history">
+    <h3>History</h3>
+  </div>
+
+</div>
+
+<script>
+let display = document.getElementById("display");
+let historyDiv = document.getElementById("history");
+
+function append(val) {
+  display.value += val;
+}
+
+function clearDisplay() {
+  display.value = "";
+}
+
+function del() {
+  display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+  try {
+    let result = eval(display.value);
+    addHistory(display.value + " = " + result);
+    display.value = result;
+  } catch {
+    display.value = "Error";
+  }
+}
+
+function addHistory(entry) {
+  let p = document.createElement("p");
+  p.textContent = entry;
+  historyDiv.appendChild(p);
+}
+</script>
+
+</body>
+</html>

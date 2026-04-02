@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+    }
+
+    header {
+      background-color: #2e2e2e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('C:/Users/angel/OneDrive/Pictures/Screenshots/slide-cassios-bar.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .menu-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        padding: 20px 0;
+        scroll-behavior: smooth;
+      }
+      
+      .menu-carousel::-webkit-scrollbar {
+        height: 8px;
+      }
+      .menu-carousel::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 10px;
+      }
+      
+      .menu-item {
+        flex: 0 0 auto;
+        width: 280px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        scroll-snap-align: start;
+        overflow: hidden;
+      }
+      
+      .menu-item img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+      }
+      
+      .menu-item .info {
+        padding: 15px;
+      }      
+
+    .reservation,
+    .events {
+      background-color: #fffefc;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      padding: 30px;
+      margin-top: 20px;
+    }
+
+    #address {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #fef9f6;
+      }
+      
+      #address h2 {
+        margin-bottom: 10px;
+      }
+      
+      .map-container {
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+      }            
+
+    .footer {
+      background-color: #2e2e2e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Cassio Lovo Restaurant</h1>
+</header>
+
+<nav>
+  <a href="#menu">Menu</a>
+  <a href="#reservation">Reserve</a>
+  <a href="#events">Events</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  Fine Dining Experience
+</section>
+
+<section id="menu" class="section">
+    <h2>Our Menu</h2>
+    <div class="menu-carousel">
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\grill.jpg" alt="Grilled Chicken">
+        <div class="info">
+          <h3>Grilled Chicken</h3>
+          <p>Served with garlic mashed potatoes and sautéed vegetables.</p>
+          <strong>Price: $18</strong>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\Steak.jpg" alt="Steak Special">
+        <div class="info">
+          <h3>Steak Special</h3>
+          <p>Juicy sirloin steak with herb butter and seasonal sides.</p>
+          <strong>Price: $24</strong>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\lava.jpg" alt="Chocolate Lava Cake">
+        <div class="info">
+          <h3>Chocolate Lava Cake</h3>
+          <p>Warm and gooey, served with vanilla ice cream.</p>
+          <strong>Price: $10</strong>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\ceviche.jpg" alt="Ceviche">
+        <div class="info">
+          <h3>Ceviche</h3>
+          <p>Fresh fish marinated in lime juice with cilantro and onions.</p>
+          <strong>Price: $20</strong>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\chicken-caesar-salad.jpg" alt="Chicken Caesar Salad">
+        <div class="info">
+          <h3>Chicken Caesar Salad</h3>
+          <p>Fresh romaine lettuce, grilled chicken, and Caesar dressing.</p>
+          <strong>Price: $12</strong>
+        </div>
+      </div>
+      <div class="menu-item">
+        <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\ice cream italin.jpg" alt="Ice cream">
+        <div class="info">
+          <h3>Ice Cream</h3>
+            <p>Choose from vanilla, chocolate, or strawberry.</p>
+          <strong>Price: $5</strong>
+        </div>
+      </div>
+        <div class="menu-item">
+            <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\premium falooda.jpg" alt="Falooda">
+            <div class="info">
+            <h3>Falooda</h3>
+            <p>A traditional dessert made with vermicelli, basil seeds, and rose syrup.</p>
+            <strong>Price: $7</strong>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="C:\Users\angel\OneDrive\Pictures\Screenshots\Tuna_Carpaccio.jpg" alt="Tuna Carpaccio">
+            <div class="info">
+            <h3>Tuna Carpaccio</h3>
+            <p>Thinly sliced tuna with a drizzle of olive oil and lemon.</p>
+            <strong>Price: $15</strong>
+            </div>
+        </div>
+    </div>
+  </section>  
+
+<section id="reservation" class="section reservation">
+  <h2>Schedule a Reservation</h2>
+  <p>Book your table below:</p>
+  <form>
+    <label for="name">Name:</label><br />
+    <input type="text" id="name" name="name" required /><br /><br />
+
+    <label for="date">Date:</label><br />
+    <input type="date" id="date" name="date" required /><br /><br />
+
+    <label for="time">Time:</label><br />
+    <input type="time" id="time" name="time" required /><br /><br />
+
+    <label for="guests">Guests:</label><br />
+    <input type="number" id="guests" name="guests" min="1" required /><br /><br />
+
+    <button type="submit">Book Table</button>
+  </form>
+</section>
+
+<section id="events" class="section events">
+  <h2>Upcoming Events</h2>
+  <ul>
+    <li><strong>Wine & Dine Night:</strong> Every Friday at 7 PM</li>
+    <li><strong>Live Music:</strong> Saturdays at 8 PM</li>
+    <li><strong>Chef’s Special Showcase:</strong> 1st Sunday of every month</li>
+  </ul>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <p>Email: info@cassio.com | Phone: +44 2366 3235</p>
+</section>
+
+<section id="address" class="section">
+    <h2>Our Location</h2>
+    <p>📍 35 Belgrave Rd, Pimlico, London SW1V 2BB, UK</p>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.121765350544!2d-0.13907399999999998!3d51.490995199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604e1b419de99%3A0x81648db8f54d6aa9!2s35%20Belgrave%20Rd%2C%20Pimlico%2C%20London%20SW1V%202BB%2C%20UK!5e0!3m2!1sen!2sin!4v1713461063761!5m2!1sen!2sin" 
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>   
+
+<footer class="footer">
+  &copy; 2025 Cassio Lovo Restaurant. All rights reserved.
+</footer>
+
+</body>
+</html>
